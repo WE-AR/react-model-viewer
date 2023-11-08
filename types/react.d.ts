@@ -1,5 +1,3 @@
-/// <reference types="react-scripts" />
-
 import { ModelViewerElement } from "@google/model-viewer";
 
 export declare global {
