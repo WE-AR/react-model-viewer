@@ -22,6 +22,6 @@
   },
   "include": [
     "src",
-    "types/types/react.d.ts"
+    "types/react.d.ts"
   ]
 }

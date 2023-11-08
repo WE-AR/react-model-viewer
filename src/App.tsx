@@ -1,18 +1,21 @@
 import React from "react";
-import "./styles.css";
-
+import "./App.css";
 
 export default function App() {
   return (
-    <div id="card">
+    <div className='App'>
       <model-viewer
-        src="/Astronaut.glb"
-        ios-src=""
-        poster="https://cdn.glitch.com/36cb8393-65c6-408d-a538-055ada20431b%2Fposter-astronaut.png?v=1599079951717"
-        alt="A 3D model of an astronaut"
+        ar-modes="webxr scene-viewer quick-look"
+        style={{width: '100%', height: '100%'}}
+        environment-image="neutral"
+        src="glTF/WaterBottle.gltf"
+        field-of-view="auto"
+        min-field-of-view="auto"
+        max-field-of-view="auto"
         shadow-intensity="1"
         camera-controls
         auto-rotate
+        // @ts-ignore
         ar
       ></model-viewer>
     </div>
