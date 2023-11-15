@@ -9,8 +9,11 @@ export default function App() {
       const model = modelRef.current;
 
       if (model["canActivateAR"]) {
+        console.log('can activate AR')
         // @ts-ignore
         model["activateAR"]();
+      } else {
+        console.log('cannot activate AR')
       }
     }
 
