@@ -1,23 +1,25 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef, useEffect, useState} from "react";
 import "./App.css";
 
 export default function App() {
   const modelRef = useRef(null);
+  const [isPlaying, setPlaying] = useState(false);
 
   useEffect(() => {
-    if (modelRef.current) {
+    const checkARAvailability = setInterval(() => {
       const model = modelRef.current;
-
-      if (model["canActivateAR"]) {
-        console.log('can activate AR')
+      if (model && model["canActivateAR"]) {
+        clearInterval(checkARAvailability);
+        console.log('can activate AR');
         // @ts-ignore
         model["activateAR"]();
       } else {
-        console.log('cannot activate AR')
+        console.log('waiting for AR availability...');
       }
-    }
+    }, 1000); // 매 1초마다 확인
 
-  },[])
+    return () => clearInterval(checkARAvailability); // 컴포넌트 언마운트 시 인터벌 해제
+  }, []);
 
 
   return (
