@@ -3,7 +3,6 @@ import "./App.css";
 
 export default function App() {
   const modelRef = useRef(null);
-  const [isPlaying, setPlaying] = useState(false);
 
   useEffect(() => {
     const checkARAvailability = setInterval(() => {
