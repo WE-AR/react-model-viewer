@@ -25,6 +25,8 @@ export default function App() {
     <div className='App'>
       <model-viewer
         ref={modelRef}
+        // @ts-ignore
+        autoplay
         ar-modes="webxr scene-viewer quick-look"
         style={{width: '100%', height: '100%'}}
         environment-image="neutral"
